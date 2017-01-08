@@ -11,6 +11,7 @@ import showMenu from './menu';
 import credentials from './credentials';
 import createClass from './createClass';
 import apexTest from './apexTest';
+import allApexTests from './allApexTests';
 import soql from './soql';
 import toql from './toql';
 import deploy from './deploy';
@@ -31,6 +32,7 @@ export {
     createClass,
     deploy,
     apexTest,
+    allApexTests,
     soql,
     toql,
     diff,

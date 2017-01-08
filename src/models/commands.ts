@@ -70,6 +70,13 @@ export default {
         icon: 'beaker',
         label: 'Run Unit Tests',
     },
+    // Run all Unit tests
+    allApexTests: {
+        description: 'Run the all Unit Tests for this org',
+        detail: 'Run all apex tests for this org and report total aggregate coverage',
+        icon: 'beaker',
+        label: 'Run All Unit Tests',
+    },
     // Run SOQL
     soql: {
         description: 'Run a SOQL query',
