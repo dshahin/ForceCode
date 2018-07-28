@@ -1,10 +1,18 @@
-[![Logo](https://rawgithub.com/celador/ForceCode/Documentation/images/logo-type.svg)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
+[![Logo](https://raw.githubusercontent.com/celador/ForceCode/master/images/logo-type.png)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
 
 # ForceCode for Visual Studio Code
 
-[![Version](http://vsmarketplacebadge.apphb.com/version/JohnAaronNelson.ForceCode.svg)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
-[![Installs](http://vsmarketplacebadge.apphb.com/installs/JohnAaronNelson.ForceCode.svg)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating/JohnAaronNelson.ForceCode.svg)](https://vsmarketplacebadge.apphb.com/rating/JohnAaronNelson.ForceCode.svg)
+[![Version](https://vsmarketplacebadge.apphb.com/version/JohnAaronNelson.ForceCode.png)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/JohnAaronNelson.ForceCode.png)](https://marketplace.visualstudio.com/items?itemName=JohnAaronNelson.ForceCode)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating/JohnAaronNelson.ForceCode.png)](https://vsmarketplacebadge.apphb.com/rating/JohnAaronNelson.ForceCode.svg)
+
+## Deprecation
+
+This extension has been deprecated in favor of [Salesforce DX](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode) 
+
+This extension will no longer receive any updates.  You may continue to use this extension for as long as you want.  
+
+If you would like to see this project continue, please let me know.
 
 ## Overview
 
@@ -15,6 +23,10 @@ There's no complicated setup process or project configurations, no external apps
 ### Documentation
 
 Documentation site can be found at [https://codescience.com/forcecode/](https://johnaaronnelson.gitbooks.io/forcecode/content/)  
+
+### Permissions
+
+Please note that the following permissions are required to develop on the Force.com platform: [https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro_permissions.htm](https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro_permissions.htm)
 
 ## Features
 
@@ -27,6 +39,7 @@ Documentation site can be found at [https://codescience.com/forcecode/](https://
     * Coverage warnings and percents
     * Errors in the editor on test failures
     * Auto-open test log
+    * Easy to run a single tests, multiple tests, or all tests in a Class
 * Intellisense / Code Completion for Apex (in progress)
 * Execute Anonymous
 * View / Save Debug Logs
@@ -173,7 +186,12 @@ If a compile is in process, ForceCode will queue a compile, so you won't waste A
 Menu: &gt;ForceCode Menu... Run Unit Tests  
 Mac: alt + cmd + t  
 Win: ctrl + shift + t  
-Run the tests in the currently open file.  
+Run tests in the currently open file.  
+
+You can run all tests in the current file or any individual tests in the current file.
+To run all tests in the current file, make sure you have no text selected and use the hotkey.
+If you have any text selected that contains a corresponding test method name, it will run only those tests.  So, to run a single test, simply highlight the method name and execute the "Run Apex Tests" command
+
 For easy and fun TDD, keep the class you're working on open in one pane, and your tests in the other.
 Use the keyboard shortcut and the tests will execute.  The results of your tests will display below, along with errors.
 Code coverage will also be generated and display in your Class file.
@@ -275,6 +293,7 @@ Step 3.  Open the terminal by pressing `ctrl` + `~` and install the dependencies
 ### Run the extension
 
 Step 4.  Press F5 to start debugging the extension. Another VSCode window will open up, which will host your extension.  Open your Salesforce project and start working.
+         If you get an error, ensure you have Typescript installed globally `npm install typescript -g`
 
 ### Debug the extension
 
@@ -285,7 +304,11 @@ Step 6.  Have Fun!
 
 ## Future goals
 
-* Test runner (kind of done)
 * Intellisense code completion (in progress)
 * Implement checkpoints in the editor
-* Integrate with Yo Force to provide scaffolding of files.
+
+## Change Log
+
+* 0.5.23 
+  - Reorder "Create Class" command options to make Custom the default option
+  - Change "Get Logs" behavior to not create an "untitled" log file

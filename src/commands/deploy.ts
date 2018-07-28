@@ -3,7 +3,7 @@ import fs = require('fs-extra');
 import * as path from 'path';
 import * as error from './../util/error';
 
-var tools: any = require('cs-jsforce-metadata-tools');
+var tools: any = require('jsforce-metadata-tools');
 
 export default function deploy(context: vscode.ExtensionContext) {
     vscode.window.forceCode.statusBarItem.text = 'ForceCode: Deploy Started';
@@ -11,7 +11,6 @@ export default function deploy(context: vscode.ExtensionContext) {
     var _consoleInfoReference: any = console.info;
     var _consoleErrorReference: any = console.error;
     var _consoleLogReference: any = console.log;
-    // Here is replaceSrc possiblity
     const validationIdPath: string = `${vscode.workspace.rootPath}${path.sep}.validationId`;
     const statsPath: string = `${vscode.workspace.rootPath}${path.sep}DeployStatistics.log`;
     const deployPath: string = vscode.window.forceCode.workspaceRoot;
@@ -34,7 +33,7 @@ export default function deploy(context: vscode.ExtensionContext) {
     var deployOptions: any = {
         username: vscode.window.forceCode.config.username,
         password: vscode.window.forceCode.config.password,
-        loginUrl: 'https://login.salesforce.com',
+        loginUrl: vscode.window.forceCode.config.url || 'https://login.salesforce.com',
         checkOnly: true,
         testLevel: 'RunLocalTests',
         verbose: false,
